@@ -1,6 +1,8 @@
 import atpy
 import numpy as np
 
+from hyperion.util.constants import c
+
 # Define constants
 m_H = 1.66053886e-24
 
@@ -53,6 +55,7 @@ for ir, size in enumerate(['usg', 'vsg', 'big']):
     # Write out to file
     t = atpy.Table()
     t.add_column('wav', wav)
+    t.add_column('nu', c / (wav * 1.e-4))
     t.add_column('albedo', c_sca / c_ext)
     t.add_column('chi', chi)
     t.write('processed/opacities_%s.hdf5' % size, overwrite=True)
