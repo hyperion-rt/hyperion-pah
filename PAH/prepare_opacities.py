@@ -53,8 +53,7 @@ for ir, size in enumerate(['usg', 'vsg', 'big']):
     # Write out to file
     t = atpy.Table()
     t.add_column('wav', wav)
-    t.add_column('c_ext', c_ext)
-    t.add_column('c_sca', c_sca)
+    t.add_column('albedo', c_sca / c_ext)
     t.add_column('chi', chi)
     t.write('processed/opacities_%s.hdf5' % size, overwrite=True)
     

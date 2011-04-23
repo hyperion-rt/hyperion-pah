@@ -61,7 +61,7 @@ for size in ['big', 'vsg', 'usg']:
 
     # Create a table with the independent variable
     t = atpy.Table(name='Emissivity variable')
-    t.add_column('E', U)
+    t.add_column('specific_energy_abs', U)
     ts.append(t)
     
     # Write out to HDF5 file
